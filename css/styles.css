@@ -3,3 +3,7 @@ body {
   color: blue;
   font-size: 100px;
 }
+
+.well {
+  font-size: 20px;
+}
