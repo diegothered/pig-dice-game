@@ -1,8 +1,8 @@
 //player roll random roll generator
-function myRoll() {
-  var x = Math.floor((Math.random() * 6) + 1);
-  document.getElementById("showRoll").innerHTML = x;
-}
+// function myRoll() {
+//   var x = Math.floor((Math.random() * 6) + 1);
+//   document.getElementById("showRoll").innerHTML = x;
+// }
 
 //Business Logic
 //declaring two variables named player 1 & 2 as empty strings
@@ -15,51 +15,51 @@ function myRoll() {
 // This is a constructor for Player to store all player info
 function Player(turn) {
   this.roll = 0;
-  this.tempScoreOne = 0;
-  this.totalScoreOne = 0;
+  this.tempscoreOne = 0;
+  this.totalscoreOne = 0;
   this.turn = turn;
   this.playerName;
 }
-//branching using player roll to end game and show alert
+//created prototype with branching using player roll to end game and show alert
 Player.prototype.rollone = function () {
-  if (this.roll ===1) {
-    this.tempScoreOne = 0;
+  if (this.roll === 1) {
+    this.tempscoreOne = 0;
     alert("Sorry " + this.playerName + ", you rolled a 1! Your turn is over!")
     }
     else {
-      this.tempScoreOne += this.roll;
+      this.tempscoreOne += this.roll;
     }
   }
-
+//created hold prototype to hold Player score
 Player.prototype.hold = function() {
-  this.totalScoreOne += this.tempScoreOne;
-  this.tempScoreOne = 0;
+  this.totalscoreOne += this.tempscoreOne;
+  this.tempscoreOne = 0;
 }
-
+//created winner prototype to "alert" player they won
 Player.prototype.winnerCheck = function() {
-  if (this.totalScoreOne >= 100) {
+  if (this.totalscoreOne >= 100) {
     alert("Congradulations," + this.playerName + " You Won!!");
   }
 }
-
+//created new game for player if they lose
 Player.prototype.newGame = function() {
   this.roll = 0;
-  this.tempScoreOne = 0;
-  this.totalScoreOne = 0;
+  this.tempscoreOne = 0;
+  this.totalscoreOne = 0;
   this.playerName = "";
 }
 
-var clearScores = function() {
+var clearValues = function() {
   $(".firstPlayer").val("");
   $(".secondPlayer").val("");
 }
 //user interface front end//
 $(document).ready(function() {
-  $(".console").hide();
+  $(".gamePlay").hide();
   $("button#start").click(function(event) {
     player1 = new Player(true);
     player2 = new Player(false);
-    $(".console").show();
+    $(".gamePlay").show();
 
     var firstPlayer = $(".firstPlayer").val();
     $("#firstPlayer").text(firstPlayer);
@@ -71,7 +71,52 @@ $(document).ready(function() {
     player2.playerName = secondPlayer;
 });
 
-$("button#new-game")
+$("button#new-game").click(function(event) {
+  $(".gamePlay").hide();
+  clearValues();
+  player1.newGame();
+  player2.newGame();
+  $("#diceTotal").empty();
+  $("#scoreOne").empty();
+  $("#rolldice1").empty();
+  $("#diceTotal").empty();
+  $("#scoreTwo").empty();
+  $("#rollDice2").empty();
+
+  $(".menu").show();
+});
+
+$("button#roll1").click(function(event) {
+  player1.roll = rollDice();
+  $("#rolldice1").text(player1.roll);
+  player1.rollone();
+  $("#diceTotal").text(player1.tempscoreOne);
+});
+
+$("button#roll2").click(function(event) {
+  player2.roll = rollDice();
+  $("#rolldice2").text(player2.roll);
+  player2.roll1();
+  $("#diceTotal").text(player2.tempscoreOne);
+});
+
+$("button#player1-hold").click(function(event) {
+  player1.hold();
+  $("#scoreOne").text(player1.totalscoreOne);
+  $("#diceTotal").empty();
+  $("#rollDice1").empty();
+  player1.winnerCheck();
+});
+
+$("button#player2-hold").click(function(event) {
+  player2.hold();
+  $("#scoreTwo").text(player2.totalScoreOne);
+  $("#diceTotal").empty();
+  $("#rollDice2").empty();
+  player2.winnerCheck();
+  });
+});
+// debugger;
 //prototype branching for possible player roll combinations
 // Player.prototype.roll = function () {
 //   var randomNo + Math.floor((Math.random() * 6 + 1;//Random generator from 1-6

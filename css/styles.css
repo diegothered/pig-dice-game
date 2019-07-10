@@ -6,6 +6,7 @@ body {
 
 .well {
   font-size: 20px;
+  text-align: center;
 }
 
 label {
@@ -33,9 +34,9 @@ h3{
 }
 
 .col-md-6 {
-  float: right;
+  float: left;
 }
-#roll1{
+#roll1 {
   border: 3px solid black;
   border-radius: 5px;
   width: 150px;
@@ -43,7 +44,7 @@ h3{
   font-weight: bold;
   background-color: transparent;
 }
-#roll2{
+#roll2 {
   border: 3px solid black;
   border-radius: 5px;
   width: 150px;
@@ -66,7 +67,7 @@ h3{
   height:60px;
   color: black;
 }
-#hold{
+#player1-hold {
     border: 3px solid black;
     border-radius: 5px;
     width: 150px;
@@ -74,13 +75,23 @@ h3{
     font-weight: bold;
     background-color: transparent;
 }
+
+#hold1 {
+  border: 3px solid black;
+  border-radius: 5px;
+  width: 150px;
+  height: 50px;
+  font-weight: bold;
+  background-color: transparent;
+}
 .refresh{
   padding-right: 25px;
   padding-left: 25px;
 }
 
-.container{
+.gamePlay{
   background-image: url("https://i.makeagif.com/media/7-30-2014/gqb5oK.gif");
+  text-align: center;
 }
 .row{
   background-color: grey;

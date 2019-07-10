@@ -10,39 +10,37 @@
 </head>
   <body>
     <div class="container">
-        <h1>Pig Dice Player</h1>
-        <!--instructions for game-->
+      <h1>Pig Dice Player</h1>
+      <!--instructions for game-->
+      <div class="well">
+        <h2>Intructions for game</h2>
+        <ol>
+          <li>If the player rolls a 1, they score nothing and it becomes the next player's turn.</li>
+          <li>If the player rolls any other number, it is added to their turn total and the player's turn continues.</li>
+          <li>If the player chooses to "hold", their total is added to their score, and it becomes the next player's turn.</li>
+          <li>The first player to reach a score of 100 points wins the game.</li>
+        </ol>
+      </div>
+      <!--Enter player name-->
+      <div class="menu container">
         <div class="well">
-          <div class="jumbotron">
-          <h2>Intructions for game</h2>
-          <ol>
-            <li>If the player rolls a 1, they score nothing and it becomes the next player's turn.</li>
-            <li>If the player rolls any other number, it is added to their turn total and the player's turn continues.</li>
-            <li>If the player chooses to "hold", their total is added to their score, and it becomes the next player's turn.</li>
-            <li>The first player to reach a score of 100 points wins the game.</li>
-          </ol>
-          </div>
-        </div>
-        <!--Enter player name-->
-        <div class="playerName container">
-          <div class="well">
-            <h3>Enter your player name</h3>
-            <form id="playerOne">
-              <div class="form-group">
-                <label for="firstPlayer">Player 1 Name:</label>
-                <input required class="firstPlayer" type="text">
-              </div>
-            </form>
+          <h3>Enter your player name</h3>
+          <form id="playerOne">
+            <div class="form-group">
+              <label for="firstPlayer">Player 1 Name:</label>
+              <input required class="firstPlayer" type="text">
+            </div>
+          </form>
 
-            <form id="playerTwo">
-              <div class="form-group">
-                <label for="secondPlayer">Player 2 Name:</label>
-                <input required class="secondPlayer" type="text">
-              </div>
-            </form>
-            <button id="start" class="btn btn-danger">Enter names</button>
-          </div>
+          <form id="playerTwo">
+            <div class="form-group">
+              <label for="secondPlayer">Player 2 Name:</label>
+              <input required class="secondPlayer" type="text">
+            </div>
+          </form>
+          <button id="start" class="btn btn-danger">Enter names and play game</button>
         </div>
+      </div>
         <!--Roll dice game play-->
         <div class="gamePlay container">
           <div class="box">
@@ -52,18 +50,18 @@
                   <h3>Player 1: <span id="firstPlayer"><span></h3>
                   <button id="roll1" class="">Roll dice</button>
                   <button id="player1-hold" class="">Hold dice</button>
-                  <h4>Current Roll: <span id="rollDice1"></span></h4>
+                  <h4>Current Roll: <span id="rolldice1"></span></h4>
                   <p>Current Total: <span id="diceTotal"></span></p>
-                  <p>Total scoreOne: <span id="scoreOne"></span></p>
+                  <p>Total score one: <span id="scoreOne"></span></p>
                 </div>
 
                 <div class="col-md-6">
                   <h3>Player 2: <span id="secondPlayer"><span></h3>
-                  <button id="roll1" class="">Roll dice</button>
-                  <button id="player2-hold" class="">Hold dice</button>
+                  <button id="roll2" class="">Roll dice</button>
+                  <button id="hold1" class="">Hold dice</button>
                   <h4>Current Roll: <span id="rollDice2"></span></h4>
                   <p>Current Total: <span id="diceTotal"></span></p>
-                  <p>Total scoreOne: <span id="scoreTwo"></span></p>
+                  <p>Total score two: <span id="scoreTwo"></span></p>
                 </div>
               </div>
             </div>
