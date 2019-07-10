@@ -25,10 +25,26 @@
         </div>
         <!--Enter player name-->
         <div class="playerName container">
-          <div class="jumbotron">
+          <div class="well">
             <h3>Enter your player name</h3>
+            <form id="playerOne">
+              <div class="form-group">
+                <label for="firstPlayer">Player 1 Name:</label>
+                <input required class="firstPlayer" type="text">
+              </div>
+            </form>
 
-      <button onclick="myRoll() " class="btn btn-danger">Roll</button>
+            <form id="playerTwo">
+              <div class="form-group">
+                <label for="secondPlayer">Player 2 Name:</label>
+                <input required class="secondPlayer" type="text">
+              </div>
+            </form>
+            <button id="start" class="btn btn-danger">Start Game</button>
+          </div>
+        </div>
+        <!--Roll dice game play-->
+        <div class=""
 
       <p id="showRoll"></p>
 
