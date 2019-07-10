@@ -40,14 +40,35 @@
                 <input required class="secondPlayer" type="text">
               </div>
             </form>
-            <button id="start" class="btn btn-danger">Start Game</button>
+            <button id="start" class="btn btn-danger">Enter names</button>
           </div>
         </div>
         <!--Roll dice game play-->
-        <div class=""
+        <div class="gamePlay container">
+          <div class="box">
+            <div class="row">
+              <div class="well">
+                <div class="col-md-6">
+                  <h3>Player 1: <span id="firstPlayer"><span></h3>
+                  <button id="roll1" class="">Roll dice</button>
+                  <button id="player1-hold" class="">Hold dice</button>
+                  <h4>Current Roll: <span id="rollDice1"></span></h4>
+                  <p>Current Total: <span id="diceTotal"></span></p>
+                  <p>Total scoreOne: <span id="scoreOne"></span></p>
+                </div>
 
-      <p id="showRoll"></p>
-
-    </div>
+                <div class="col-md-6">
+                  <h3>Player 2: <span id="secondPlayer"><span></h3>
+                  <button id="roll1" class="">Roll dice</button>
+                  <button id="player2-hold" class="">Hold dice</button>
+                  <h4>Current Roll: <span id="rollDice2"></span></h4>
+                  <p>Current Total: <span id="diceTotal"></span></p>
+                  <p>Total scoreOne: <span id="scoreTwo"></span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
   </body>
 </html>
