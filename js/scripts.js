@@ -96,7 +96,7 @@ $("button#roll1").click(function(event) {
 $("button#roll2").click(function(event) {
   player2.roll = rollDice();
   $("#rolldice2").text(player2.roll);
-  player2.roll1();
+  player2.rollone();
   $("#diceTotal").text(player2.tempscoreOne);
 });
 
@@ -104,11 +104,11 @@ $("button#player1-hold").click(function(event) {
   player1.hold();
   $("#scoreOne").text(player1.totalscoreOne);
   $("#diceTotal").empty();
-  $("#rollDice1").empty();
+  $("#rolldice1").empty();
   player1.winnerCheck();
 });
 
-$("button#player2-hold").click(function(event) {
+$("button#hold1").click(function(event) {
   player2.hold();
   $("#scoreTwo").text(player2.totalScoreOne);
   $("#diceTotal").empty();
