@@ -1,12 +1,13 @@
 body {
   background-image: url("https://i.makeagif.com/media/7-30-2014/gqb5oK.gif");
-  color: blue;
+  color: #2EFFD8;
   font-size: 80px;
 }
 
 .well {
   font-size: 20px;
   text-align: center;
+  background-color: black;
 }
 
 label {

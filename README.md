@@ -1,6 +1,6 @@
-#Jaime Takikawa
+# Jaime Takikawa
 
-####July 10 Week 12, 2019
+## July 10 Week 12, 2019
 
 #### By Jaime Takikawa
 

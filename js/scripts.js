@@ -38,7 +38,7 @@ Player.prototype.hold = function() {
 //created winner prototype to "alert" player they won
 Player.prototype.winnerCheck = function() {
   if (this.totalscoreOne >= 100) {
-    alert("Congradulations," + this.playerName + " You Won!!");
+    alert("Congratulations," + this.playerName + " You Won!!");
   }
 }
 //created new game for player if they lose
@@ -48,12 +48,13 @@ Player.prototype.newGame = function() {
   this.totalscoreOne = 0;
   this.playerName = "";
 }
-
+//created variable to cleat values after each turn
 var clearValues = function() {
   $(".firstPlayer").val("");
   $(".secondPlayer").val("");
 }
 //user interface front end//
+//
 $(document).ready(function() {
   $(".gamePlay").hide();
   $("button#start").click(function(event) {
@@ -79,7 +80,7 @@ $("button#new-game").click(function(event) {
   $("#diceTotal").empty();
   $("#scoreOne").empty();
   $("#rolldice1").empty();
-  $("#diceTotal").empty();
+  $("#diceTotal2").empty();
   $("#scoreTwo").empty();
   $("#rollDice2").empty();
 
@@ -97,7 +98,7 @@ $("button#roll2").click(function(event) {
   player2.roll = rollDice();
   $("#rolldice2").text(player2.roll);
   player2.rollone();
-  $("#diceTotal").text(player2.tempscoreOne);
+  $("#diceTotal2").text(player2.tempscoreOne);
 });
 
 $("button#player1-hold").click(function(event) {
@@ -110,8 +111,8 @@ $("button#player1-hold").click(function(event) {
 
 $("button#hold1").click(function(event) {
   player2.hold();
-  $("#scoreTwo").text(player2.totalScoreOne);
-  $("#diceTotal").empty();
+  $("#scoreTwo").text(player2.totalscoreOne);
+  $("#diceTotal2").empty();
   $("#rollDice2").empty();
   player2.winnerCheck();
   });
